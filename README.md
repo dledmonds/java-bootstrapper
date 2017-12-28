@@ -19,9 +19,9 @@ latest.mainClass = {class used to start your application}
 ## How It Works
 When the bootstrapper starts, the following actions are taken;
 * **baseDir** is checked for a `version.properties` file, if not found, current version is assumed to be 0
-* **versionUrl** is checked and if the **latest.version** > **local.version** and upgrade starts
+* **versionUrl** is checked and if the **latest.version** > **local.version** an upgrade starts
   * **latest.downloadFile** is downloaded and unpacked into **baseDir/lib/{VERSION}**
-  * `version.properties` file is updated to include **local.version** and **local.mainClass** (taken from **latest.version** and **latest.mainClass** in **versionUrl** property file
+  * `version.properties` file is updated to include **local.version** and **local.mainClass** (taken from **latest.version** and **latest.mainClass** in **versionUrl** property file)
 * Any jar files within **baseDir/lib/{VERSION}** are loaded and the main method from **local.mainClass** is executed with an empty String[] passed in
 
 Application updates can be performed by updating the property file at **versionUrl** (remembering to increment the version) and creating a new zip file of dependencies - located at **latest.downloadFile**
